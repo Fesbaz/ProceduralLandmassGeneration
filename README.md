@@ -10,5 +10,5 @@
 
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/588b9a0a-a865-4b56-bd47-c8bb4100bed5)
 
-![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/1a1f5aa8-62ca-44bd-8335-fd31ee9b2d4a)
+![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/f13892c9-ec26-4377-8875-bc0f18ae59d9)
 
