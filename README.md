@@ -21,18 +21,14 @@ Noise Map with Falloff option
 Colour Map with falloff on
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/d9a9e2d5-dedb-481c-86a5-fea9638f89c6)
 
-
 Falloff On / Flatshading On
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/783d82be-5bba-461e-a09f-d298feae5167)
-
 
 Falloff Off / Flatshading On
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/588b9a0a-a865-4b56-bd47-c8bb4100bed5)
 
-
 Falloff On / Flatshading Off
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/7df1e4a2-1943-4fcf-a2a3-4cd5a374c9dc)
-
 
 Falloff Off / Flatshading Off
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/f13892c9-ec26-4377-8875-bc0f18ae59d9)
