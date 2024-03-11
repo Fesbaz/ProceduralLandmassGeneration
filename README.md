@@ -7,3 +7,8 @@
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/377571b2-b6aa-440b-a320-0feaa182331d)
 
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/d9a9e2d5-dedb-481c-86a5-fea9638f89c6)
+
+![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/588b9a0a-a865-4b56-bd47-c8bb4100bed5)
+
+![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/686f544f-29d8-4c87-a491-3bcb74ce5af7)
+
