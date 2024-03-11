@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// falloff map so that, should we wish, we can force landmasses to be surrounded by water.
 public static class FalloffGenerator {
     
     public static float[,] GenerateFalloffMap(int size) {

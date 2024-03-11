@@ -16,10 +16,18 @@ public class MapGenerator : MonoBehaviour {
     public bool autoUpdate;
     public TerrainType[] regions;
     float [,] falloffMap;
+    bool falloffMapGenerated;
 
 
     Queue<MapThreadInfo<MapData>> mapDataThreadInfoQueue = new Queue<MapThreadInfo<MapData>>();
     Queue<MapThreadInfo<MeshData>> meshDataThreadInfoQueue = new Queue<MapThreadInfo<MeshData>>();
+
+    void GenerateFalloffMap() {
+        if (terrainData.useFalloff && !falloffMapGenerated) {
+            falloffMap = FalloffGenerator.GenerateFalloffMap(mapChunkSize + 2);
+            falloffMapGenerated = true;
+        }
+    }
 
     void Awake() {
         falloffMap = FalloffGenerator.GenerateFalloffMap(mapChunkSize);
@@ -30,7 +38,8 @@ public class MapGenerator : MonoBehaviour {
             DrawMapInEditor();
         }
     }
-    
+
+    static MapGenerator instance;
     /* 
     about mapChunkSize
     Non-Flatshaded:
@@ -41,8 +50,6 @@ public class MapGenerator : MonoBehaviour {
     Flatshaded:
     Flatshading generates more vertices, so we have to lower this to 96 (also divisible by all evens up to 12) from 239 to not go over the cap
     */
-
-    static MapGenerator instance;
     public static int mapChunkSize {
         get {
             if (instance == null) {
@@ -67,11 +74,9 @@ public class MapGenerator : MonoBehaviour {
             display.DrawTexture(TextureGenerator.TextureFromHeightMap(mapData.heightMap));
         } else if (drawMode == DrawMode.ColourMap) {
             display.DrawTexture(TextureGenerator.TextureFromColorMap(mapData.colourMap, mapChunkSize, mapChunkSize));
-        }
-        else if (drawMode == DrawMode.Mesh) {
+        } else if (drawMode == DrawMode.Mesh) {
             display.DrawMesh(MeshGenerator.GenerateTerrainMesh(mapData.heightMap, terrainData.meshHeightMultiplier, terrainData.meshHeightCurve, editorPreviewLOD, terrainData.useFlatShading), TextureGenerator.TextureFromColorMap(mapData.colourMap, mapChunkSize, mapChunkSize));
-        }
-        else if (drawMode == DrawMode.FalloffMap) {
+        } else if (drawMode == DrawMode.FalloffMap) {
             display.DrawTexture(TextureGenerator.TextureFromHeightMap(FalloffGenerator.GenerateFalloffMap(mapChunkSize)));
         }
     }
@@ -123,25 +128,29 @@ public class MapGenerator : MonoBehaviour {
 
     // Generation of Map Colors (and height map?) based on noise
     public MapData GenerateMapData(Vector2 centre) {
+
+        GenerateFalloffMap();
         // Generate Noise Map with size of mapChunkSize + 2 to generate 1 extra noise value on left, right, top and bottom sides
         float[,] noiseMap = Noise.GenerateNoiseMap(mapChunkSize + 2, mapChunkSize + 2, noiseData.seed, noiseData.noiseScale, noiseData.octaves, noiseData.persistance, noiseData.lacunarity, centre + noiseData.offset, noiseData.normalizeMode);
 
         Color[] colourMap = new Color[mapChunkSize * mapChunkSize];
 
         // Loop through noise map
-        for (int y = 0; y < mapChunkSize; y++) {
-            for (int x = 0; x < mapChunkSize; x++) {
+        for (int y = 0; y < mapChunkSize+2; y++) {
+            for (int x = 0; x < mapChunkSize+2; x++) {
                 if (terrainData.useFalloff) {
                     noiseMap[x, y] = Mathf.Clamp01(noiseMap[x, y] - falloffMap[x, y]);
                 }
-                float currentHeight = noiseMap[x, y]; // set height at current location to noisemap value
-
-                // Loop through all regions to find which one this falls in
-                for (int i = 0; i < regions.Length; i++) {
-                    if (currentHeight >= regions[i].height) {
-                        colourMap[y * mapChunkSize + x] = regions[i].colour; // save value to 1D colour map
-                    } else {
-                        break;
+                
+                if (x < mapChunkSize && y < mapChunkSize) {
+                    float currentHeight = noiseMap[x, y]; // set height at current location to noisemap value
+                    // Loop through all regions to find which one this falls in
+                    for (int i = 0; i < regions.Length; i++) {
+                        if (currentHeight >= regions[i].height) {
+                            colourMap[y * mapChunkSize + x] = regions[i].colour; // save value to 1D colour map
+                        } else {
+                            break;
+                        }
                     }
                 }
             }
@@ -162,7 +171,9 @@ public class MapGenerator : MonoBehaviour {
             noiseData.OnValuesUpdated += OnValuesUpdated;
         }
 
+        falloffMapGenerated = false; // Before or after GenerateFalloffMap?
         falloffMap = FalloffGenerator.GenerateFalloffMap(mapChunkSize);
+        
     }
 
     struct MapThreadInfo<T> {
