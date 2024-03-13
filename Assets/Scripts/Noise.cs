@@ -19,8 +19,8 @@ public static class Noise {
         float frequency = 1;
 
         for (int i = 0; i < octaves; i++){
-            float offsetX = prng.Next(-100000,100000) + offset.x; // Mathf.PelinNoise returns same value over values >100k
-            float offsetY = prng.Next(-100000,100000) - offset.y;
+            float offsetX = prng.Next(-100000, 100000) + offset.x; // Mathf.PerlinNoise returns same value over values >100k
+            float offsetY = prng.Next(-100000, 100000) - offset.y;
             octaveOffsets[i] = new Vector2(offsetX, offsetY);
 
             maxPossibleHeight += amplitude;
@@ -37,8 +37,8 @@ public static class Noise {
         float minLocalNoiseHeight = float.MaxValue;
 
         // TO make noise map zoom to the center when changing scale, otherwise it zooms to the top right
-        float halfWidth = mapWidth / 2;
-        float halfHeight = mapHeight / 2;
+        float halfWidth = mapWidth / 2f;
+        float halfHeight = mapHeight / 2f;
 
         // Noise map generation using Unity's PerlinNoise
         for (int y = 0; y < mapHeight; y++) {
@@ -62,7 +62,7 @@ public static class Noise {
 
                 if (noiseHeight > maxLocalNoiseHeight) {
                     maxLocalNoiseHeight = noiseHeight;
-                } else if (noiseHeight < minLocalNoiseHeight) {
+                } else if (noiseHeight < minLocalNoiseHeight) { // Remove else?
                     minLocalNoiseHeight = noiseHeight;
                 }
                 noiseMap [x, y] = noiseHeight;
@@ -73,10 +73,10 @@ public static class Noise {
         for (int y = 0; y < mapHeight; y++) {
             for (int x = 0; x < mapWidth; x++) {
                 if (normalizeMode == NormalizeMode.Local) {
-                    noiseMap[x,y] = Mathf.InverseLerp(minLocalNoiseHeight, maxLocalNoiseHeight, noiseMap  [x, y]);
+                    noiseMap[x, y] = Mathf.InverseLerp(minLocalNoiseHeight, maxLocalNoiseHeight, noiseMap  [x, y]);
                 } else {
-                    float normalizedHeight = (noiseMap[x,y] + 1) / maxPossibleHeight;
-                    noiseMap[x,y] = Mathf.Clamp(normalizedHeight, 0, int.MaxValue);
+                    float normalizedHeight = (noiseMap[x, y] + 1) / maxPossibleHeight;
+                    noiseMap[x, y] = Mathf.Clamp(normalizedHeight, 0, int.MaxValue);
                 }
             }
         }

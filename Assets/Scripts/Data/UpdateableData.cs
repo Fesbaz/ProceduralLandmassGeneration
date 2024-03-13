@@ -9,18 +9,17 @@ public class UpdatableData : ScriptableObject {
     public event System.Action OnValuesUpdated;  
     public bool autoUpdate;
 
-    // Called when values change in inspector, scripts compile and others
+    
+    // OnValidate is called when values change in inspector, scripts compile, among others
     protected virtual void OnValidate() {
-        UnityEditor.EditorApplication.delayCall += _OnValidate;
-    }
-
-    protected virtual void _OnValidate() {
         if (autoUpdate) { // I dont see why anyone would NOT want to see the changes automatically, but ye its a bool
-            NotifyOfUpdatedValues();
+            UnityEditor.EditorApplication.update += NotifyOfUpdatedValues; 
         }
     }
 
     public void NotifyOfUpdatedValues() {
+        // We dont want this to be called every frame after script compilation, so we unsub once this method is called
+        UnityEditor.EditorApplication.update -= NotifyOfUpdatedValues;
         if (OnValuesUpdated != null) {
             OnValuesUpdated();
         }

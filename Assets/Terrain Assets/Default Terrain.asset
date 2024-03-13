@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Default Terrain
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  useFlatShading: 1
+  useFlatShading: 0
   useFalloff: 0
-  uniformScale: 2.5
+  uniformScale: 2
   meshHeightMultiplier: 40
   meshHeightCurve:
     serializedVersion: 2
@@ -30,17 +30,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.35132882
-      value: 0.048278563
-      inSlope: 0.03766154
-      outSlope: 0.03766154
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.24198088
-      outWeight: 0.08661841
-    - serializedVersion: 3
-      time: 1.2013755
-      value: 1.1981115
+      time: 1
+      value: 1
       inSlope: 2
       outSlope: 2
       tangentMode: 0

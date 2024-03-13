@@ -359,6 +359,7 @@
 -analyzer:"D:/Unity Hub/Editor/2022.3.21f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Data/NoiseData.cs"
 "Assets/Scripts/Data/TerrainData.cs"
+"Assets/Scripts/Data/TextureData.cs"
 "Assets/Scripts/Data/UpdateableData.cs"
 "Assets/Scripts/EndlessTerrain.cs"
 "Assets/Scripts/FalloffGenerator.cs"

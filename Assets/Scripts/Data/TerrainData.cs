@@ -11,4 +11,16 @@ public class TerrainData : UpdatableData { // used to inherit from ScriptableObj
     public float uniformScale = 5f; // Scale of Terrain Mesh in X-Z-axis
     public float meshHeightMultiplier; // Scale in Y-axis
     public AnimationCurve meshHeightCurve;
+
+    public float minHeight {
+        get {
+            return uniformScale * meshHeightMultiplier * meshHeightCurve.Evaluate(0);
+        }
+    }
+
+    public float maxHeight {
+        get {
+            return uniformScale * meshHeightMultiplier * meshHeightCurve.Evaluate(1);
+        }
+    }
 }
