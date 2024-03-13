@@ -13,21 +13,40 @@ MonoBehaviour:
   m_Name: Default Texture
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  baseColours:
-  - {r: 0, g: 0.20116112, b: 0.3962264, a: 0}
-  - {r: 0, g: 0.2765914, b: 0.5471698, a: 1}
-  - {r: 0.6981132, g: 0.5710529, b: 0.39186543, a: 0}
-  - {r: 0.17508402, g: 0.4528302, b: 0.17301531, a: 0}
-  - {r: 0.11710344, g: 0.3679245, b: 0.109336056, a: 0}
-  - {r: 0.21698111, g: 0.19296832, b: 0.15454787, a: 0}
-  - {r: 0.18867922, g: 0.16553931, b: 0.13082945, a: 0}
-  - {r: 1, g: 1, b: 1, a: 0}
-  baseStartHeights:
-  - 0
-  - 0.125
-  - 0.15
-  - 0.18
-  - 0.25
-  - 0.3
-  - 0.4
-  - 0.8
+  layers:
+  - texture: {fileID: 2800000, guid: e9d1930e54dc88e4c95bac2b899ca5a9, type: 3}
+    tint: {r: 0.21048418, g: 0.49692953, b: 0.8113208, a: 0}
+    tintStrength: 0.1
+    startHeight: 0
+    blendStrength: 0
+    textureScale: 25
+  - texture: {fileID: 2800000, guid: 30ad382d24b36df45bdb4248defba025, type: 3}
+    tint: {r: 0.454902, g: 0.454902, b: 0.3254902, a: 0}
+    tintStrength: 0.2
+    startHeight: 0.083
+    blendStrength: 0.014
+    textureScale: 0
+  - texture: {fileID: 2800000, guid: 8b81f3f62151ac741b0f208794e69b91, type: 3}
+    tint: {r: 0.29411766, g: 0.34117648, b: 0.19215688, a: 0}
+    tintStrength: 0.1
+    startHeight: 0.088
+    blendStrength: 0.02
+    textureScale: 8.7
+  - texture: {fileID: 2800000, guid: cb8f924762ee36e4d9f57f94daf1741c, type: 3}
+    tint: {r: 0.37254903, g: 0.39607847, b: 0.29411766, a: 0}
+    tintStrength: 0.2
+    startHeight: 0.176
+    blendStrength: 0.127
+    textureScale: 11.25
+  - texture: {fileID: 2800000, guid: 53f8ad151151f764196e48cc05fb8cc6, type: 3}
+    tint: {r: 0.38431376, g: 0.37647063, b: 0.32941177, a: 0}
+    tintStrength: 0.2
+    startHeight: 0.343
+    blendStrength: 0.461
+    textureScale: 16.46
+  - texture: {fileID: 2800000, guid: 935409065c591c14590e723fac4bf865, type: 3}
+    tint: {r: 0.3018868, g: 0.24884301, b: 0.089711644, a: 0}
+    tintStrength: 0
+    startHeight: 0.843
+    blendStrength: 0.284
+    textureScale: 15.62
