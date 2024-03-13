@@ -60,5 +60,5 @@ Multithreading
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/c6b0aff2-73d5-421c-9cda-989384c0337e)
 
 Texture Shader
-![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/6e948f77-e81c-4557-a454-cfd729280510)
+![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/04ad81e5-c264-4eb5-afa8-971d0d0955e0)
 
