@@ -58,3 +58,7 @@ LODs
 Multithreading
 
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/c6b0aff2-73d5-421c-9cda-989384c0337e)
+
+Texture Shader
+![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/aadc013f-33b0-4ed5-88b8-f3dc69a54868)
+
