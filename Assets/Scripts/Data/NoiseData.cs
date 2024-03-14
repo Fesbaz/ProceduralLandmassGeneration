@@ -20,6 +20,9 @@ public class NoiseData : UpdatableData { // used to inherit from ScriptableObjec
 
     // void OnValidate is called when a script value is changed in inspector
     // Here we use it to clamp some of the values
+
+    #if UNITY_EDITOR
+
     protected override void OnValidate() {
         if (lacunarity < 1) {
             lacunarity = 1;
@@ -30,5 +33,7 @@ public class NoiseData : UpdatableData { // used to inherit from ScriptableObjec
 
         base.OnValidate();
     }
+
+    #endif
 
 }

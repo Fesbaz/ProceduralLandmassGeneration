@@ -9,7 +9,8 @@ public class UpdatableData : ScriptableObject {
     public event System.Action OnValuesUpdated;  
     public bool autoUpdate;
 
-    
+    #if UNITY_EDITOR
+
     // OnValidate is called when values change in inspector, scripts compile, among others
     protected virtual void OnValidate() {
         if (autoUpdate) { // I dont see why anyone would NOT want to see the changes automatically, but ye its a bool
@@ -24,4 +25,6 @@ public class UpdatableData : ScriptableObject {
             OnValuesUpdated();
         }
     }
+
+    #endif
 }
