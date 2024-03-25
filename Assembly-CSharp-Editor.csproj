@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\UpdatableDataEditor.cs" />
-    <Compile Include="Assets\Editor\MapGeneratorEditor.cs" />
+    <Compile Include="Assets\Editor\MapPreviewEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
