@@ -28,7 +28,7 @@ public class MeshSettings : UpdatableData { // used to inherit from ScriptableOb
     */
     public int numVertsPerLine {
         get {
-            return supportedChunkSizes[(useFlatShading) ? flatshadedChunkSizeIndex : chunkSizeIndex] + 1;
+            return supportedChunkSizes[(useFlatShading) ? flatshadedChunkSizeIndex : chunkSizeIndex] + 5;
         }
     }
 
