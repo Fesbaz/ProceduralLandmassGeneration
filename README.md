@@ -62,9 +62,11 @@ Multithreading
 Texture Shader
 ![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/04ad81e5-c264-4eb5-afa8-971d0d0955e0)
 
-![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/291b2cbe-6bd2-4eac-844d-a662eeba1227)
-
 ![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/80a1a326-ac4a-4f1d-89b2-73fabc252964)
 
 
 ![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/1ad4cd70-d3e1-4fe7-956a-04db7aa9c0a5)
+
+![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/bb7008a1-5d1d-46bd-8785-a08a8fdfd8e1)
+
+![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/291b2cbe-6bd2-4eac-844d-a662eeba1227)
