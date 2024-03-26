@@ -2,7 +2,8 @@ Procedural Landmass Generation Project in Unity.
 
 A simulation of a world, fully playable. (following Sebastian Lague's video series)
 
-![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/aaffd19d-96e0-4b75-a58a-6c28498daede)
+![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/5a448006-d1fc-4931-9105-a7ba38458c16)
+
 
 
 Noise Map with octaves, persistance, lacunarity, seed and offset
@@ -54,7 +55,18 @@ LODs
 
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/e5f8713c-672a-404f-98d5-6100fc6e9fa3)
 
+![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/a1bdefd7-35c0-4264-9766-acf7a98551a0)
+
+
 
 Multithreading
 
 ![image](https://github.com/Fesbaz/ProceduralLandmassGeneration/assets/64195483/c6b0aff2-73d5-421c-9cda-989384c0337e)
+
+Texture Shader
+![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/04ad81e5-c264-4eb5-afa8-971d0d0955e0)
+
+![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/80a1a326-ac4a-4f1d-89b2-73fabc252964)
+
+
+![image](https://github.com/MMaxG/ProceduralLandmassGeneration/assets/64195483/1ad4cd70-d3e1-4fe7-956a-04db7aa9c0a5)
