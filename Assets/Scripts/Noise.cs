@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
 public static class Noise {
 
@@ -78,6 +79,7 @@ public static class Noise {
                 }
             }
         }
+
         return noiseMap;
     }
 }
@@ -86,6 +88,7 @@ public static class Noise {
 public class NoiseSettings {
     public Noise.NormalizeMode normalizeMode; // !!!!!!! README !!!!!!! using local normalize mode causes uneven chunk borders, use Global to fix
 
+    public bool useFalloff = false;
     public float scale = 50;
 
     public int octaves = 6;

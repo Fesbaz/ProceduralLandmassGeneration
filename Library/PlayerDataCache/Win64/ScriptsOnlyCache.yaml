@@ -1,15 +1,15 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - EndlessTerrain
+    - HeightMapSettings
     - HideOnPlay
-    - MapDisplay
-    - MapGenerator
+    - MapPreview
+    - MeshSettings
     - MouseLook
-    - NoiseData
     - PlayerMovement
-    - TerrainData
+    - TerrainGenerator
     - TextureData
+    - ThreadedDataRequester
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
@@ -22,7 +22,8 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
   serializedClasses:
     Assembly-CSharp:
-    - EndlessTerrain/LODInfo
+    - LODInfo
+    - NoiseSettings
     - TextureData/Layer
   methodsToPreserve: []
   sceneClasses:
@@ -56,23 +57,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2280}
+      Script: {instanceID: 1984}
     - Class: 114
-      Script: {instanceID: 2584}
+      Script: {instanceID: 2282}
     - Class: 114
       Script: {instanceID: 3186}
     - Class: 114
-      Script: {instanceID: 4740}
+      Script: {instanceID: 4744}
     - Class: 114
-      Script: {instanceID: 5662}
+      Script: {instanceID: 5666}
     - Class: 114
-      Script: {instanceID: 5670}
+      Script: {instanceID: 5674}
     - Class: 114
-      Script: {instanceID: 6136}
+      Script: {instanceID: 6140}
     - Class: 114
-      Script: {instanceID: 8460}
+      Script: {instanceID: 8464}
     - Class: 114
-      Script: {instanceID: 8888}
+      Script: {instanceID: 8892}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
@@ -142,6 +143,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine
     namespaceName: Cinemachine
     className: CinemachineTriggerAction
+  - hash:
+      serializedVersion: 2
+      Hash: 105747a5e843578925a89916aa48a94a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ThreadedDataRequester
   - hash:
       serializedVersion: 2
       Hash: 157d3cf40178d244cd11ae1c9791ead7
@@ -240,12 +247,6 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
-      Hash: c3090f3e5805d0129af56c983f2264f0
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: MapGenerator
-  - hash:
-      serializedVersion: 2
       Hash: 1ab136900c0edaeeb49424c852595030
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -330,10 +331,10 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: fb1912a6f75477354a1f3e5cb0339a1d
+      Hash: c91ce25dbd2c463f9aed57d6c9029a69
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: EndlessTerrain
+    className: TerrainGenerator
   - hash:
       serializedVersion: 2
       Hash: 3b5263a98bcc71d9a9d1d78a31b34ced
@@ -864,10 +865,10 @@ ScriptsOnlyBuild:
     className: UpdatableData
   - hash:
       serializedVersion: 2
-      Hash: da2ff089e6cb3188884bdc0f7c736142
+      Hash: 0f174694bfb37d8774f3db11bedf5dae
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: NoiseData
+    className: HeightMapSettings
   - hash:
       serializedVersion: 2
       Hash: f7f7349a6e7f06ee409e4af613ad9743
@@ -948,10 +949,10 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 8339a0b885f0385f6fca8082cd8dd00d
+      Hash: 6f41f9674ff16232694ffbfd08b156bb
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: TerrainData
+    className: MeshSettings
   - hash:
       serializedVersion: 2
       Hash: 2071f7ac454ae14eafecfd4041edae3a
@@ -1344,10 +1345,10 @@ ScriptsOnlyBuild:
     className: UnityOnMouseOverMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 6ae3cd9fbaf5d327341d609b854cabad
+      Hash: 20aace2ec3d1d6e6dee24b73f20080af
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: MapDisplay
+    className: MapPreview
   - hash:
       serializedVersion: 2
       Hash: 2c583ad0ac85d03e8700dd05fdcb46cb

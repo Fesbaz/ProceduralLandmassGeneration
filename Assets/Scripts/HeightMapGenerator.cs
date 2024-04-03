@@ -6,6 +6,12 @@ public static class HeightMapGenerator {
     
     public static HeightMap GenerateHeightMap(int width, int height, HeightMapSettings settings, Vector2 sampleCentre) {
         float[,] values = Noise.GenerateNoiseMap(width, height, settings.noiseSettings, sampleCentre);
+        
+        float[,] falloffMap = new float[width, height];
+
+        if (settings.noiseSettings.useFalloff) {
+            falloffMap = FalloffGenerator.GenerateFalloffMap(width);
+        }
 
         // heightCurve is used to make height map not affect water so much, configured in inspector
         // threading causes heightCurve to return wrong values, this fixes it
@@ -16,6 +22,9 @@ public static class HeightMapGenerator {
         
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
+                if (settings.noiseSettings.useFalloff) {
+                    values[i,j] = values[i,j] - falloffMap[i,j];
+                }
                 values[i, j] *= heightCurve_threadsafe.Evaluate(values[i, j]) * settings.heightMultiplier;
 
                 if (values[i, j] > maxValue) {
